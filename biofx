@@ -1,0 +1,92 @@
+Your BLAST hit was a contaminant.
+The E-value was lying to you.
+%
+"It works on my conda env."
+%
+The cluster is down. The cluster is always down.
+%
+Reviewer 2 wants more replicates.
+You have three samples and a grad student.
+%
+The pipeline is reproducible,
+as long as you never touch it again.
+%
+Off-by-one error.
+You forgot BED is 0-based and GFF is 1-based. Again.
+%
+Your analysis is finished.
+The reference genome was updated this morning.
+%
+Today you will discover that your "novel gene"
+is a known pseudogene on the minus strand.
+%
+The p-value was 0.051.
+The reviewer was unmoved.
+%
+A wise PI once said: "Just align it to the genome."
+Three months later, you are still aligning it to the genome.
+%
+Your batch effect is stronger than your biological signal.
+Embrace it.
+%
+conda activate
+conda deactivate
+conda activate
+ResolvePackageNotFound
+%
+You will spend two days writing a script
+to avoid five minutes of manual work.
+You regret nothing.
+%
+The FASTQ file is truncated.
+So is your patience.
+%
+There are two hard problems in bioinformatics:
+naming files, off-by-one errors, and reproducibility.
+%
+git commit -m "final"
+git commit -m "final_v2"
+git commit -m "final_ACTUAL_use_this_one"
+%
+Your heatmap is beautiful.
+No one can tell you what it means.
+%
+The sequencing core called.
+They would like to discuss your "interesting" QC plots.
+%
+Memory error at 4 a.m.
+The job had been running for nine days.
+%
+You normalized twice.
+Now nothing is significant.
+%
+The README says "see paper for details."
+The paper says "see supplementary methods."
+The supplementary methods say "available upon request."
+%
+Your Snakemake DAG is a work of art.
+It produces one empty file.
+%
+"Have you tried turning the threshold up?"
+%
+The genome is 98% finished.
+It has been 98% finished for four years.
+%
+A single base changed everything.
+It was a sequencing error.
+%
+You will be asked to "quickly run the numbers."
+There is nothing quick about it.
+%
+Trust the data.
+But verify the metadata.
+%
+The fortune-teller aligned your reads.
+MAPQ 0. Multimapper. The future is ambiguous.
+%
+That p-value is lying to you.
+%
+I have been "Solving environment:" for forty minutes.
+I no longer remember what I came here to install.
+I am not sure I will be the same person when it finishes.
+%
