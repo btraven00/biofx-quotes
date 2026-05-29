@@ -1,13 +1,13 @@
-# fortunes-biofx -- a bioinformatics fortune cookie pack
+# fortunes-lab -- a bioinformatics fortune cookie pack
 #
 #   make            compile the .dat index files (needs `strfile`)
 #   make install    install fortunes into the system fortune directory
 #   make uninstall   remove them again
-#   make test       print a random biofx fortune
+#   make test       print a random lab fortune
 #   make clean      remove generated .dat files
 
 # Source fortune files (no extension; strfile generates the .dat indexes)
-FORTUNES := biofx biofx-quotes biofx-local
+FORTUNES := lab lab-quotes lab-local
 DATS     := $(addsuffix .dat,$(FORTUNES))
 
 # Where the `fortune` command looks for cookie files. Override on the
@@ -46,22 +46,24 @@ check-dir:
 		exit 1; }
 
 install: check-strfile check-dir all
-	install -d "$(FORTUNE_DIR)"
+	install -d "$(DESTDIR)$(FORTUNE_DIR)"
 	@for f in $(FORTUNES); do \
-		echo "installing $$f -> $(FORTUNE_DIR)"; \
-		install -m 644 $$f     "$(FORTUNE_DIR)/$$f"; \
-		install -m 644 $$f.dat "$(FORTUNE_DIR)/$$f.dat"; \
+		echo "installing $$f -> $(DESTDIR)$(FORTUNE_DIR)"; \
+		install -m 644 $$f     "$(DESTDIR)$(FORTUNE_DIR)/$$f"; \
+		install -m 644 $$f.dat "$(DESTDIR)$(FORTUNE_DIR)/$$f.dat"; \
 	done
-	@echo "done. try:  fortune biofx"
+	@echo "done. try:  fortune lab"
 
 uninstall:
 	@for f in $(FORTUNES); do \
-		rm -f "$(FORTUNE_DIR)/$$f" "$(FORTUNE_DIR)/$$f.dat"; \
+		rm -f "$(DESTDIR)$(FORTUNE_DIR)/$$f" "$(DESTDIR)$(FORTUNE_DIR)/$$f.dat"; \
 	done
-	@echo "removed biofx fortunes from $(FORTUNE_DIR)"
+	@echo "removed lab fortunes from $(DESTDIR)$(FORTUNE_DIR)"
 
+# Note: this `fortune` resolves a bare relative arg (".", "./lab") against
+# the *system* fortune dir, so we hand it the absolute path to this directory.
 test: check-strfile all
-	@fortune -f . 2>/dev/null; echo "---"; fortune .
+	@fortune "$(CURDIR)"
 
 clean:
 	rm -f $(DATS)

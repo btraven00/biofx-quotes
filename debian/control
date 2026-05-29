@@ -1,0 +1,19 @@
+Source: fortunes-lab
+Section: games
+Priority: optional
+Maintainer: btraven <ben@localhost>
+Build-Depends: debhelper-compat (= 13), fortune-mod
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+
+Package: fortunes-lab
+Architecture: all
+Depends: ${misc:Depends}, fortune-mod
+Description: bioinformatics fortune cookies for the fortune(6) program
+ A fortune cookie pack tailored to bioinformatics labs: equal parts
+ hard-won lab humour, real quotes from biology, statistics and computing,
+ and quotes collected from local professors and PIs.
+ .
+ Installs the data files lab, lab-quotes and lab-local (with their
+ compiled .dat indexes) under /usr/share/games/fortunes, ready for use with
+ the fortune(6) program, e.g. "fortune lab".

@@ -1,10 +1,10 @@
-# fortunes-biofx
+# fortunes-lab
 
 A `fortune` cookie pack for bioinformatics labs. Equal parts hard-won wisdom,
 real quotes, and the quiet despair of `conda activate`.
 
 ```
-$ fortune biofx
+$ fortune lab
 Your BLAST hit was a contaminant.
 The E-value was lying to you.
 ```
@@ -13,9 +13,9 @@ The E-value was lying to you.
 
 | File           | Contents                                              |
 |----------------|-------------------------------------------------------|
-| `biofx`        | Lab humor: clusters, pipelines, reviewer 2, off-by-one |
-| `biofx-quotes` | Real quotes from biology, stats, and computing         |
-| `biofx-local`  | Quotes from *our own* professors and PIs — add yours!  |
+| `lab`          | Lab humor: clusters, pipelines, reviewer 2, off-by-one |
+| `lab-quotes`   | Real quotes from biology, stats, and computing         |
+| `lab-local`    | Quotes from *our own* professors and PIs — add yours!  |
 
 ## Install
 
@@ -34,9 +34,9 @@ Then:
 
 ```sh
 make install          # compiles + installs into the system fortune dir
-fortune biofx         # a lab joke
-fortune biofx-quotes  # a real quote
-fortune biofx-local   # something a professor actually said
+fortune lab           # a lab joke
+fortune lab-quotes    # a real quote
+fortune lab-local     # something a professor actually said
 ```
 
 If `make` can't find your fortune directory, point it at the right one:
@@ -48,10 +48,15 @@ make install FORTUNE_DIR=/usr/local/share/games/fortunes
 No root? Keep everything local and run from this directory:
 
 ```sh
-make            # build the .dat index files here
-fortune .       # draw from all files in the current dir
-fortune ./biofx # draw from one file
+make                  # build the .dat index files here
+fortune "$PWD"        # draw from all files in this dir
+fortune "$PWD/lab"    # draw from one file
 ```
+
+> Heads up: `fortune-mod` resolves a *bare* relative argument (`.`, `./lab`)
+> against the **system** fortune directory, not your shell's `cwd` — so for a
+> local checkout pass an **absolute** path (`"$PWD/..."`) as shown above.
+> `make test` does this for you.
 
 ## Adding fortunes
 

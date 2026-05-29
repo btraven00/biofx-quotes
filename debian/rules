@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+# Install location for fortune(6) cookie files.
+DEB_FORTUNE_DIR := /usr/share/games/fortunes
+
+%:
+	dh $@
+
+# dh_auto_build runs `make` (compiles the .dat indexes via strfile).
+# dh_auto_clean runs `make clean` (removes them). We only need to point
+# the install step at the staging dir and the canonical fortune location.
+override_dh_auto_install:
+	$(MAKE) install \
+	    DESTDIR=$(CURDIR)/debian/fortunes-lab \
+	    FORTUNE_DIR=$(DEB_FORTUNE_DIR)
